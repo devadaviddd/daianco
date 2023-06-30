@@ -1,4 +1,4 @@
-import localFont from '@next/font/local';
+import localFont from 'next/font/local'
 
 
 
@@ -200,6 +200,11 @@ const andantedtext_regular_italic = localFont({
   variable: '--font-andanteText-regular-italic',
 })
 
+const victor = localFont({
+  src: '../../public/fonts/Victor.otf',
+  variable: '--font-victor',
+  display: 'swap',
+})
 
 const localFontLibrary = {
   futura,
@@ -235,6 +240,7 @@ const localFontLibrary = {
   andantedtext_medium_italic,
   andantedtext_regular,
   andantedtext_regular_italic,
+  victor,
 };
 
 export default localFontLibrary;

@@ -1,9 +1,9 @@
 import localFontLibrary from "@/fonts/local-fonts";
 import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
-import { gsap } from 'gsap'
+import { gsap } from "gsap";
 import { useIsomorphicLayoutEffect } from "@/hooks/uselsomorphicLayout";
-
+import { load } from "webfontloader";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -11,53 +11,59 @@ interface MainLayoutProps {
 
 const inter = Inter({ subsets: ["latin"] });
 
-
 export const MainLayouts = ({ children }: MainLayoutProps) => {
-  const [fonts, setFonts] = useState<string>('');
 
   useIsomorphicLayoutEffect(() => {
     const timeline = gsap.timeline({
       defaults: {
-        ease: 'power4.inOut',
-        duration: 1
-      }
+        ease: "power4.inOut",
+        duration: 1,
+      },
     });
-    timeline.from('.line', {scaleY: 0, duration: 2})
+    timeline.from(".line", { scaleY: 0, duration: 2 });
 
     return () => {
       timeline.kill();
       timeline.revert();
-    }
-  }, [])
+    };
+  }, []);
 
-  useEffect(() => {
-    let localFont: string = '';
-    Object.values(localFontLibrary).forEach((font: any) => {
-      const variable = font.variable
-      localFont += variable;
-      localFont += ' ';
-    });
-    setFonts(localFont);
-  }, [])
 
-  return (         
+  return (
     <div
       className={`
       ${inter.className}
-      ${fonts}
-      `}
+      ${Object.values(localFontLibrary)
+        .map((font) => font.variable)
+        .join(' ')}
+      overflow-x-hidden `}
+      
     >
-      <nav className="w-full h-[80px]  flex fixed">
-        <div className="w-1/2 h-full text-center
-        flex items-center justify-center">
-          <h1 className="text-4xl font-futura_bold tracking-wider text-[var(--main-red)]  ">DaiAnCo.</h1>
-        </div>    
+      <nav className="w-full h-[80px]  flex fixed z-10">
+        <div
+          className="w-1/2 h-full text-center
+        flex items-center justify-center"
+        >
+          <h1 className="text-4xl font-futura_bold tracking-wider text-[var(--main-red)]  ">
+            DaiAnCo.
+          </h1>
+        </div>
         <ul className="w-full h-full flex flex-row items-center justify-center gap-10">
-          <li className="text-white font-andantedisplay_bold text-md navChild">HOME</li>
-          <li className="text-white font-andantedisplay_bold text-md navChild">PRODUCT</li>
-          <li className="text-white font-andantedisplay_bold text-md navChild">SERVICE</li>
-          <li className="text-white font-andantedisplay_bold text-md navChild">CONTACT</li>
-          <li className="text-white font-andantedisplay_bold text-md navChild">LOGIN</li>
+          <li className="text-white font-andantedisplay_bold text-md navChild">
+            HOME
+          </li>
+          <li className="text-white font-andantedisplay_bold text-md navChild">
+            PRODUCT
+          </li>
+          <li className="text-white font-andantedisplay_bold text-md navChild">
+            SERVICE
+          </li>
+          <li className="text-white font-andantedisplay_bold text-md navChild">
+            CONTACT
+          </li>
+          <li className="text-white font-andantedisplay_bold text-md navChild">
+            LOGIN
+          </li>
         </ul>
       </nav>
       <video
@@ -74,4 +80,4 @@ export const MainLayouts = ({ children }: MainLayoutProps) => {
       {children}
     </div>
   );
-}
+};
