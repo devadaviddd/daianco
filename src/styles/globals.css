@@ -61,27 +61,12 @@ body {
   color: transparent;
 }
 
-/* .keen-slider__slide .custom-keen {
-  transform: none !important;
-} */
-
-/* .keen-slider__slide {
-  opacity: 1;
-  transition: opacity 0.5s ease-out;
-} */
-
-.keen-slider__slide--inactive {
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-
-}
-
-.keen-slider__slide--active {
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
-}
-
 .slick-list {
+  width: 100%;
+  height: 100%;
+}
+
+.slick-track {
   width: 100%;
   height: 100%;
 }

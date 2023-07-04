@@ -1,9 +1,9 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 import FEWhite from "@/assets/white-FE.png";
 
-export const HomeProductsCarousel = () => {
+export const MainProductsCarousel = () => {
   const [slide1, setSlide1] = useState<any>(null);
   const [slide2, setSlide2] = useState<any>(null);
 
@@ -15,12 +15,6 @@ export const HomeProductsCarousel = () => {
     vertical: true,
     verticalSwiping: true,
     swipeToSlide: true,
-    beforeChange: function (currentSlide: any, nextSlide: any) {
-      console.log("before change", currentSlide, nextSlide);
-    },
-    afterChange: function (currentSlide: any) {
-      console.log("after change", currentSlide);
-    },
   };
 
   const settingsSlide2 = {
@@ -30,12 +24,6 @@ export const HomeProductsCarousel = () => {
     slidesToScroll: 1,
     verticalSwiping: true,
     swipeToSlide: true,
-    beforeChange: function (currentSlide: any, nextSlide: any) {
-      console.log("before change", currentSlide, nextSlide);
-    },
-    afterChange: function (currentSlide: any) {
-      console.log("after change", currentSlide);
-    },
   };
 
   return (

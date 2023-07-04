@@ -1,12 +1,11 @@
 import localFontLibrary from "@/fonts/local-fonts";
 import { Inter } from "next/font/google";
-import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { useIsomorphicLayoutEffect } from "@/hooks/uselsomorphicLayout";
-import { load } from "webfontloader";
+import { ReactNode } from "react";
 
 interface MainLayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,16 +27,14 @@ export const MainLayouts = ({ children }: MainLayoutProps) => {
     };
   }, []);
 
-
   return (
     <div
       className={`
       ${inter.className}
       ${Object.values(localFontLibrary)
         .map((font) => font.variable)
-        .join(' ')}
+        .join(" ")}
       overflow-x-hidden `}
-      
     >
       <nav className="w-full h-[80px]  flex fixed z-10">
         <div
