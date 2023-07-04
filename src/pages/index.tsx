@@ -6,8 +6,10 @@ import { MainLayouts } from "@/layouts/main-layouts";
 import { NextPageWithLayout } from "./_app";
 import localFontLibrary from "@/fonts/local-fonts";
 import { LineVertical } from "@/components/LineVertical";
-import FEWhite  from "@/assets/white-FE.png";
-import { HomeProductsCarousel } from "@/components/HomeProductsCarousel";
+import { HomeProductsCarousel } from "@/components/HomeProductsCarousel/index";
+import "keen-slider/keen-slider.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,10 +32,6 @@ const Home: NextPageWithLayout = () => {
         <LineVertical left />
         <LineVertical middle />
         <LineVertical right />
-        {/* <h1 className="absolute text-[22rem] cus-title-color top-[25%] 
-        font-victor w-[100vw] text-center -z-10">
-          DaiAnCo.
-        </h1> */}
 
         <div
           className="w-1/2 h-full flex flex-col justify-center
@@ -52,20 +50,7 @@ const Home: NextPageWithLayout = () => {
           </div>
         </div>
 
-
-        {/* <div className="w-1/2 h-full flex justify-center items-center
-          relative z-0">
-          <Image
-            src={FEWhite.src}
-            alt="Fire Extinguisher White"
-            width={1000}
-            height={1000}
-            className="rotate-[30deg] absolute w-[600px] h-[600px] "
-          />
-        </div> */}
-
-        <HomeProductsCarousel/>
-        
+        <HomeProductsCarousel />
       </div>
     </>
   );

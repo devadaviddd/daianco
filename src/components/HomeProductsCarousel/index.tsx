@@ -1,146 +1,139 @@
-import "keen-slider/keen-slider.min.css";
-import KeenSlider, { KeenSliderInstance, TrackDetails } from "keen-slider";
-import { useKeenSlider } from "keen-slider/react";
+import { useRef, useState } from "react";
+import Slider from "react-slick";
 import Image from "next/image";
 import FEWhite from "@/assets/white-FE.png";
-import React from "react";
-
-const WheelControls = (slider: {
-  container: {
-    dispatchEvent: (arg0: CustomEvent<{ x: any; y: any }>) => void;
-    addEventListener: (
-      arg0: string,
-      arg1: (e: any) => void,
-      arg2: { passive: boolean }
-    ) => void;
-  };
-  on: (arg0: string, arg1: () => void) => void;
-}) => {
-  let touchTimeout: string | number | NodeJS.Timeout | undefined;
-  let position: { x: any; y: any };
-  let wheelActive: boolean;
-
-  function dispatch(e: { deltaX: number; deltaY: number }, name: string) {
-    position.x -= e.deltaX;
-    position.y -= e.deltaY;
-    slider.container.dispatchEvent(
-      new CustomEvent(name, {
-        detail: {
-          x: position.x,
-          y: position.y,
-        },
-      })
-    );
-  }
-
-  function wheelStart(e: {
-    pageX: any;
-    pageY: any;
-    deltaX: number;
-    deltaY: number;
-  }) {
-    position = {
-      x: e.pageX,
-      y: e.pageY,
-    };
-    dispatch(e, "ksDragStart");
-  }
-
-  function wheel(e: any) {
-    dispatch(e, "ksDrag");
-  }
-
-  function wheelEnd(e: any) {
-    dispatch(e, "ksDragEnd");
-  }
-
-  function eventWheel(e: {
-    preventDefault: () => void;
-    pageX: any;
-    pageY: any;
-    deltaX: number;
-    deltaY: number;
-  }) {
-    e.preventDefault();
-    if (!wheelActive) {
-      wheelStart(e);
-      wheelActive = true;
-    }
-    wheel(e);
-    clearTimeout(touchTimeout);
-    touchTimeout = setTimeout(() => {
-      wheelActive = false;
-      wheelEnd(e);
-    }, 100);
-  }
-
-  slider.on("created", () => {
-    slider.container.addEventListener("wheel", eventWheel, {
-      passive: false,
-    });
-  });
-};
 
 export const HomeProductsCarousel = () => {
-  const [sliderRef] = useKeenSlider(
-    {
-      loop: false,
-      rubberband: false,
-      vertical: true,
-      mode: "snap",
-      slides: {
-        perView: 1,
-        origin: "center",
-      },
-      slideChanged: (slider) => {
-        const slides = Array.from(slider.slides); // Get all the slides
-        const currentSlideIndex = slides.findIndex((slide) => slide.classList.contains('keen-slider__slide--active'));
-        console.log(currentSlideIndex);
-        slides.forEach((slide, index) => {
-          slide.classList.toggle('keen-slider__slide--inactive', slide.classList.contains('keen-slider__slide--active'));
-          slide.classList.toggle('keen-slider__slide--active',  !slide.classList.contains('keen-slider__slide--inactive'));
+  const [slide1, setSlide1] = useState<any>(null);
+  const [slide2, setSlide2] = useState<any>(null);
 
-        });
-
-      },
+  const settingsSlide1 = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    vertical: true,
+    verticalSwiping: true,
+    swipeToSlide: true,
+    beforeChange: function (currentSlide: any, nextSlide: any) {
+      console.log("before change", currentSlide, nextSlide);
     },
-    [WheelControls]
-  );
+    afterChange: function (currentSlide: any) {
+      console.log("after change", currentSlide);
+    },
+  };
+
+  const settingsSlide2 = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    verticalSwiping: true,
+    swipeToSlide: true,
+    beforeChange: function (currentSlide: any, nextSlide: any) {
+      console.log("before change", currentSlide, nextSlide);
+    },
+    afterChange: function (currentSlide: any) {
+      console.log("after change", currentSlide);
+    },
+  };
 
   return (
-    <div
-      ref={sliderRef}
-      className="keen-slider custom-keen !w-1/2 h-full flex justify-center items-center
-    relative z-0"
-    >
-      <div className="keen-slider__slide keen-slider__slide--active flex justify-center items-center">
-        <Image
-          src={FEWhite.src}
-          alt="Fire Extinguisher White"
-          width={1000}
-          height={1000}
-          className=" custom-keen absolute w-[600px] h-[600px] rotate-[30deg]"
-        />
-      </div>
+    <div className="w-1/2 h-full relative ">
+      <Slider
+        asNavFor={slide2}
+        {...settingsSlide1}
+        className="w-full h-full overflow-hidden  
+        flex flex-col gap-2 "
+        ref={(slider1) => setSlide1(slider1)}
+      >
+        <div
+          className=" w-full h-[100vh] 
+        !flex justify-center items-center !border-none
+        "
+        >
+          <div>
+            <Image
+              src={FEWhite.src}
+              alt="Fire Extinguisher White"
+              width={1000}
+              height={1000}
+              className="w-[600px] h-[600px] rotate-[30deg]"
+            />
+          </div>
+        </div>
+        <div
+          className=" w-full h-[100vh] 
+        !flex justify-center items-center !border-none"
+        >
+          <div>
+            <Image
+              src={FEWhite.src}
+              alt="Fire Extinguisher White"
+              width={1000}
+              height={1000}
+              className="w-[600px] h-[600px] rotate-[30deg]"
+            />
+          </div>
+        </div>
+        <div
+          className=" w-full h-[100vh] 
+        !flex justify-center items-center !border-none"
+        >
+          <div>
+            <Image
+              src={FEWhite.src}
+              alt="Fire Extinguisher White"
+              width={1000}
+              height={1000}
+              className="w-[600px] h-[600px] rotate-[30deg]"
+            />
+          </div>
+        </div>
+      </Slider>
 
-      <div className="keen-slider__slide keen-slider__slide--inactive flex justify-center items-center">
-        <Image
-          src={FEWhite.src}
-          alt="Fire Extinguisher White"
-          width={1000}
-          height={1000}
-          className=" custom-keen absolute w-[600px] h-[600px] rotate-[30deg]"
-        />
-      </div>
-      <div className="keen-slider__slide keen-slider__slide--active flex justify-center items-center">
-        <Image
-          src={FEWhite.src}
-          alt="Fire Extinguisher White"
-          width={1000}
-          height={1000}
-          className=" custom-keen absolute w-[600px] h-[600px] rotate-[30deg]"
-        />
-      </div>
+      <Slider
+        asNavFor={slide1}
+        {...settingsSlide2}
+        className="w-[100vw] bottom-0 right-0 h-full flex flex-col !absolute
+          -z-10"
+        ref={(slider2) => setSlide2(slider2)}
+      >
+        <div
+          className="w-full h-[100vh] m-0
+          !flex justify-center items-center
+        "
+        >
+          <h1
+            className="text-[20rem] cus-title-color  
+        font-victor text-center"
+          >
+            MDO1
+          </h1>
+        </div>
+        <div
+          className=" w-full h-[100vh]  m-0
+        !flex justify-center items-center"
+        >
+          <h1
+            className="text-[20rem] cus-title-color  
+        font-victor text-center"
+          >
+            MDO2
+          </h1>
+        </div>
+        <div
+          className=" w-full h-[100vh]  m-0
+        !flex justify-center items-center"
+        >
+          <h1
+            className="text-[20rem] cus-title-color  
+        font-victor text-center"
+          >
+            MDO3
+          </h1>
+        </div>
+      </Slider>
     </div>
   );
 };
