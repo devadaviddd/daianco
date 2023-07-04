@@ -4,9 +4,8 @@ import { NextPageWithLayout } from "./_app";
 import "keen-slider/keen-slider.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Frame1 } from "./home/frame1";
-import { Frame2 } from "./home/frame2";
-
+import Frame1 from "./home/frame1";
+import Frame2 from "./home/frame2";
 
 const Home: NextPageWithLayout = () => {
   return (

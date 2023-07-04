@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Product } from "../api/getProductsHomePage";
 import { HomeProductsCarousel } from "@/components/Carousel/homeProducts";
 
-export const Frame2 = () => {
+const Frame2 = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -26,3 +26,5 @@ export const Frame2 = () => {
     </div>
   );
 };
+
+export default Frame2;

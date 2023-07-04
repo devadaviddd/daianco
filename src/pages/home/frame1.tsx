@@ -1,7 +1,7 @@
 import { MainProductsCarousel } from "@/components/Carousel/mainProducts";
 import { LineVertical } from "@/components/LineVertical";
 
-export const Frame1 = () => {
+const Frame1 = () => {
   return (
     <div className="w-full h-[100vh] flex flex-row relative">
       <LineVertical left />
@@ -29,3 +29,5 @@ export const Frame1 = () => {
     </div>
   );
 };
+
+export default Frame1;
