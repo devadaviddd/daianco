@@ -35,7 +35,7 @@ const Frame1 = () => {
           width={64}
           height={64}
           className="absolute w-[3rem] bottom-4 mx-auto left-0 right-0
-          cursor-pointer z-10"
+          cursor-pointer z-0"
         />
       </Scroll.Link>
 
