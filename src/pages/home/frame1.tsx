@@ -22,7 +22,7 @@ const Frame1 = () => {
           >
             DaiAn
           </h1>
-          <span className="text-3xl text-white font-andantedtext_light">
+          <span className="text-3xl text-white font-andanted text_light">
             DAIAN SAFETY TECHNOLOGY
           </span>
         </div>
@@ -35,7 +35,7 @@ const Frame1 = () => {
           width={64}
           height={64}
           className="absolute w-[3rem] bottom-4 mx-auto left-0 right-0
-          cursor-pointer z-0"
+          cursor-pointer z-10"
         />
       </Scroll.Link>
 

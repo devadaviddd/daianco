@@ -1,6 +1,6 @@
 export const NavBar = () => {
   return (
-    <nav className="w-full h-[50px]  flex fixed z-10 bg-black">
+    <nav className="w-full h-[50px]  flex fixed z-20 bg-black">
       <div
         className="w-1/2 h-full text-center
         flex items-center justify-center"

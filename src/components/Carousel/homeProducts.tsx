@@ -55,7 +55,7 @@ export const HomeProductsCarousel = (props: Props) => {
           <>
             <div
               ref={ref}
-              className="keen-slider !w-[65%] h-3/4 
+              className="keen-slider !w-[65%] h-3/4 mt-10
       "
             >
               {products.map((product) => (
@@ -64,7 +64,7 @@ export const HomeProductsCarousel = (props: Props) => {
             </div>
             {loaded && instanceRef.current && (
               <div
-                className="absolute bottom-0 w-full h-[3rem]
+                className="absolute bottom-[-1.5rem] w-full h-[3rem]
         flex gap-1 justify-center "
               >
                 {Array.from(Array(dotLength).keys()).map((index) => (

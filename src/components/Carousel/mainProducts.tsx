@@ -32,7 +32,7 @@ export const MainProductsCarousel = () => {
         asNavFor={slide2}
         {...settingsSlide1}
         className="w-full h-full overflow-hidden  
-        flex flex-col gap-2 "
+        flex flex-col gap-2 relative z-0"
         ref={(slider1) => setSlide1(slider1)}
       >
         <div
