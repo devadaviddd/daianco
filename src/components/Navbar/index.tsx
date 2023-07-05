@@ -5,7 +5,7 @@ export const NavBar = () => {
         className="w-1/2 h-full text-center
         flex items-center justify-center"
       >
-        <h1 className="text-4xl font-futura_bold tracking-wider text-[var(--main-red)]  ">
+        <h1 className="text-4xl font-futura_bold  text-[var(--main-red)]  ">
           DaiAnCo.
         </h1>
       </div>
