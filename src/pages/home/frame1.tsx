@@ -1,5 +1,8 @@
 import { MainProductsCarousel } from "@/components/Carousel/mainProducts";
 import { LineVertical } from "@/components/LineVertical";
+import MouseScroll from "@/assets/mouseScroll.png";
+import Image from "next/image";
+import * as Scroll from "react-scroll";
 
 const Frame1 = () => {
   return (
@@ -24,6 +27,17 @@ const Frame1 = () => {
           </span>
         </div>
       </div>
+
+      <Scroll.Link to={"frame2"} smooth={true} >
+        <Image
+          src={MouseScroll.src}
+          alt="Mouse Scroll"
+          width={64}
+          height={64}
+          className="absolute w-[3rem] bottom-4 mx-auto left-0 right-0
+          cursor-pointer z-10"
+        />
+      </Scroll.Link>
 
       <MainProductsCarousel />
     </div>

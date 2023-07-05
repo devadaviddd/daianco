@@ -9,6 +9,15 @@
   --main-red: #d9272e;
 }
 
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--main-red);
+}
 * {
 }
 

@@ -18,11 +18,13 @@ const Frame2 = () => {
 
   return (
     <div
-      className="w-full h-[120vh] flex flex-col 
-  bg-white"
+      className="w-full h-[120vh] flex flex-col " id='frame2'
     >
       <HomeProductsCarousel products={products} loading={loading} />
-      <div className="w-full h-1/2 bg-black"></div>
+      <div
+        className="w-full h-1/2 bg-[#f8f1f1]
+      "
+      ></div>
     </div>
   );
 };
