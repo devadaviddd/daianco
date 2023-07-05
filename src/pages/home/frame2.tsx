@@ -17,14 +17,44 @@ const Frame2 = () => {
   }, []);
 
   return (
-    <div
-      className="w-full h-[120vh] flex flex-col " id='frame2'
-    >
+    <div className="w-full h-[100vh] flex flex-col " id="frame2">
       <HomeProductsCarousel products={products} loading={loading} />
       <div
-        className="w-full h-1/2 bg-[#f8f1f1]
+        className="w-full h-1/2 bg-[#FAFAFA] grid grid-cols-2 
       "
-      ></div>
+      >
+        <div
+          className="grid-cols-1 flex justify-center
+        items-end flex-col"
+        >
+          <div
+            className="w-[60%] mb-[2rem] mr-[5rem]
+          text-[var(--main-red)] font-andantedisplay_bold text-3xl"
+          >
+            WE DO BUSINESS FOR THE SAFETY OF YOUR LIFE & PROPERTY
+          </div>
+          <p className="w-[60%] mr-[5rem] font-magazinegrotesque_regular">
+            From the year of establishment in 2001, DaiAn Company has been right
+            the place where the active engineers have come to work together for
+            the same goal of safety. With our special knowledge and work
+            experience of fire protection systems and security systems from the
+            different manufacturers in the world, we do business for the safety
+            of life. 
+  
+          </p>
+        </div>
+        <div
+          className="grid-cols-2  flex 
+          items-center"
+        >
+          <h1
+            className="text-[8rem] font-futura_bold 
+          text-[var(--main-red)]"
+          >
+            DaiAnCo.
+          </h1>
+        </div>
+      </div>
     </div>
   );
 };

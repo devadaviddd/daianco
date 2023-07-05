@@ -48,7 +48,7 @@ export const HomeProductsCarousel = (props: Props) => {
   return (
     <>
       <div
-        className="w-full h-1/2 flex items-center justify-center relative
+        className="w-full h-[60%] flex items-center justify-center relative
           "
       >
         {!loading && (
