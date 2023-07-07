@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import consultantImg from "@/assets/consultant.png";
 import installationImg from "@/assets/installation.png";
 import supplyImg from "@/assets/supply.png";
