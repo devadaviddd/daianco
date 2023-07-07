@@ -11,6 +11,7 @@ export const MainProductsCarousel = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
+    dots: true,
     slidesToScroll: 1,
     vertical: true,
     verticalSwiping: true,

@@ -79,3 +79,45 @@ body {
   width: 100%;
   height: 100%;
 }
+
+.slick-dots {
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 50% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: max-content !important;
+}
+
+.slick-dots li button {
+  position: relative;
+}
+
+.slick-dots li button::before {
+  display: none;
+
+}
+
+.slick-dots li button::after {
+  width: 0.25rem;
+  height: 100%;
+  position: absolute;
+  content: '';
+  background-color: #fff;
+}
+
+.slick-dots li:first-child button::after {
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;  
+}
+
+.slick-dots li:last-child button::after {
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;  
+}
+
+.slick-dots .slick-active button::after   {
+  background-color: var(--main-red);
+  height: 1.5rem;
+  /* border-radius: 0.375rem; */
+}
