@@ -6,12 +6,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Frame1 from "./home/frame1";
 import Frame2 from "./home/frame2";
+import Frame3 from "./home/frame3";
+import { Footer } from "@/components/Footer";
 
 const Home: NextPageWithLayout = () => {
   return (
     <>
       <Frame1 />
       <Frame2 />
+      <Frame3/>
+      <Footer/>
     </>
   );
 };

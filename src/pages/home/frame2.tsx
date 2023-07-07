@@ -20,11 +20,11 @@ const Frame2 = () => {
     <div className="w-full h-[100vh] flex flex-col " id="frame2">
       <HomeProductsCarousel products={products} loading={loading} />
       <div
-        className="w-full h-1/2 bg-[#FAFAFA] grid grid-cols-2 
+        className="w-full h-1/2 bg-[#F8F8F8] grid grid-cols-2 
       "
       >
         <div
-          className="grid-cols-1 flex justify-center
+          className=" flex justify-center
         items-end flex-col"
         >
           <div
@@ -44,7 +44,7 @@ const Frame2 = () => {
           </p>
         </div>
         <div
-          className="grid-cols-2  flex 
+          className="flex 
           items-center"
         >
           <h1

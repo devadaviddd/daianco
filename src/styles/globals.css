@@ -7,6 +7,11 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --main-red: #d9272e;
+  --card-box-shadow: rgba(99, 99, 99, 0.336) 0px 2px 8px 0px;
+}
+
+.card-box-shadow {
+  box-shadow: var(--card-box-shadow);
 }
 
 ::-webkit-scrollbar {
@@ -102,8 +107,10 @@ body {
   width: 0.25rem;
   height: 100%;
   position: absolute;
+  right: 50%;
   content: '';
   background-color: #fff;
+  
 }
 
 .slick-dots li:first-child button::after {
