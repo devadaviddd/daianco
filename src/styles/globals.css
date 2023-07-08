@@ -54,6 +54,15 @@ body {
   bottom: 10rem;
 }
 
+.banner::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 2.5rem;
+  background: var(--main-red);
+  top: 3rem;
+}
+
 .middle::after {
   content: "";
   position: absolute;
@@ -62,6 +71,16 @@ body {
   background: var(--main-red);
   top: 10rem;
 }
+
+.middleBanner::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 2.5rem;
+  background: var(--main-red);
+  top: 15rem;
+}
+
 
 .cus-title-color {
   background: linear-gradient(

@@ -4,6 +4,9 @@ import { gsap } from "gsap";
 import { useIsomorphicLayoutEffect } from "@/hooks/uselsomorphicLayout";
 import { ReactNode } from "react";
 import { NavBar } from "@/components/Navbar";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -12,7 +15,6 @@ interface MainLayoutProps {
 const inter = Inter({ subsets: ["latin"] });
 
 export const MainLayouts = ({ children }: MainLayoutProps) => {
-
   useIsomorphicLayoutEffect(() => {
     const timeline = gsap.timeline({
       defaults: {
@@ -37,7 +39,7 @@ export const MainLayouts = ({ children }: MainLayoutProps) => {
         .join(" ")}
       overflow-x-hidden `}
     >
-      <NavBar/>
+      <NavBar />
       <video
         autoPlay
         loop
