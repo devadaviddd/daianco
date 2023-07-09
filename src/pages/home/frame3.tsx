@@ -1,6 +1,13 @@
-import { ServiceCard } from "@/components/ServiceCard";
+import { ServiceCard, ServiceData } from "@/components/ServiceCard";
+import { useEffect } from "react";
 
 const Frame3 = () => {
+  useEffect(() => {
+    Object.values(ServiceData).map((service) => {
+      console.log(service.title);
+    });
+  }, []);
+
   return (
     <div
       className="w-full h-[100vh] flex flex-col 
@@ -16,11 +23,17 @@ const Frame3 = () => {
         className="w-[60%] h-3/4 grid
       grid-cols-2 grid-rows-2 gap-3"
       >
-        <ServiceCard serviceType={0}/>
-        <ServiceCard serviceType={1}/>
-        <ServiceCard serviceType={2}/>
-        <ServiceCard serviceType={3}/>
-
+        {Object.values(ServiceData).map((service, key) => {
+          const { title, description, img } = service;
+          return (
+            <ServiceCard
+              title={title}
+              description={description}
+              img={img}
+              key={key}
+            />
+          );
+        })}
       </div>
     </div>
   );

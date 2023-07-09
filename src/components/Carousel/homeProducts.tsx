@@ -2,6 +2,7 @@ import { Product } from "@/pages/api/getProductsHomePage";
 import { useKeenSlider } from "keen-slider/react";
 import { HomeProductCard } from "../ProductCard/homeCard";
 import { useEffect, useState } from "react";
+import { HomeProductCardSkeleton } from "../ProductCard/skeleton";
 
 type Props = {
   products: Product[];
@@ -23,6 +24,13 @@ export const HomeProductsCarousel = (props: Props) => {
       setLoaded(true);
     },
 
+    slides: {
+      perView,
+      spacing: 17,
+    },
+  });
+
+  const [skeletonRef] = useKeenSlider<HTMLDivElement>({
     slides: {
       perView,
       spacing: 17,
@@ -71,7 +79,9 @@ export const HomeProductsCarousel = (props: Props) => {
                   <button
                     key={index}
                     className={`w-3 h-1 rounded-md ${
-                      currentSlide === index ? "bg-[var(--main-red)] w-6" : "bg-black"
+                      currentSlide === index
+                        ? "bg-[var(--main-red)] w-6"
+                        : "bg-black"
                     }`}
                     onClick={() => instanceRef.current?.moveToIdx(index)}
                   />
@@ -79,6 +89,18 @@ export const HomeProductsCarousel = (props: Props) => {
               </div>
             )}
           </>
+        )}
+        {loading && (
+          <div
+            ref={skeletonRef}
+            className="keen-slider !w-[65%] h-3/4 mt-10 
+            "
+          >
+            <HomeProductCardSkeleton />
+            <HomeProductCardSkeleton />
+            <HomeProductCardSkeleton />
+            <HomeProductCardSkeleton />
+          </div>
         )}
       </div>
     </>

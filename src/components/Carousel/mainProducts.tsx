@@ -2,6 +2,7 @@ import { useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 import FEWhite from "@/assets/white-FE.png";
+import SecurityProduct from "@/assets/security-product.png";
 
 export const MainProductsCarousel = () => {
   const [slide1, setSlide1] = useState<any>(null);
@@ -57,11 +58,11 @@ export const MainProductsCarousel = () => {
         >
           <div>
             <Image
-              src={FEWhite.src}
+              src='https://atctpwmqlndnpmrxwsds.supabase.co/storage/v1/object/public/productImage/3.png'
               alt="Fire Extinguisher White"
               width={1000}
               height={1000}
-              className="w-[600px] h-[600px] rotate-[30deg]"
+              className="w-[400px] h-[400px] rotate-[30deg]"
             />
           </div>
         </div>
@@ -71,7 +72,7 @@ export const MainProductsCarousel = () => {
         >
           <div>
             <Image
-              src={FEWhite.src}
+              src={SecurityProduct.src}
               alt="Fire Extinguisher White"
               width={1000}
               height={1000}
@@ -94,10 +95,10 @@ export const MainProductsCarousel = () => {
         "
         >
           <h1
-            className="text-[20rem] cus-title-color  
-        font-victor text-center"
+            className="text-[10rem] cus-title-color  
+            font-andantedisplay_bold  text-center "
           >
-            MDO1
+            FIRE EXTINGUISHING SYSTEMS
           </h1>
         </div>
         <div
@@ -105,10 +106,10 @@ export const MainProductsCarousel = () => {
         !flex justify-center items-center"
         >
           <h1
-            className="text-[20rem] cus-title-color  
-        font-victor text-center"
+            className="text-[10rem] cus-title-color  
+            font-andantedisplay_bold text-center"
           >
-            MDO2
+            ADDRESSABLE FIRE ALARM SYSTEMS
           </h1>
         </div>
         <div
@@ -116,10 +117,10 @@ export const MainProductsCarousel = () => {
         !flex justify-center items-center"
         >
           <h1
-            className="text-[20rem] cus-title-color  
-        font-victor text-center"
+            className="text-[10rem] cus-title-color  
+            font-andantedisplay_bold text-center"
           >
-            MDO3
+            SECURITY PROTECTION SYSTEMS
           </h1>
         </div>
       </Slider>
