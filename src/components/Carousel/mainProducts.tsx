@@ -49,6 +49,7 @@ export const MainProductsCarousel = () => {
               width={1000}
               height={1000}
               className="w-[600px] h-[600px] rotate-[30deg]"
+              priority
             />
           </div>
         </div>
@@ -63,6 +64,8 @@ export const MainProductsCarousel = () => {
               width={1000}
               height={1000}
               className="w-[400px] h-[400px] rotate-[30deg]"
+              priority
+
             />
           </div>
         </div>
@@ -77,6 +80,8 @@ export const MainProductsCarousel = () => {
               width={1000}
               height={1000}
               className="w-[600px] h-[600px] rotate-[30deg]"
+              priority
+
             />
           </div>
         </div>

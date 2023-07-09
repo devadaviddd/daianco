@@ -55,6 +55,7 @@ export const BannerHome = () => {
         width={2225}
         height={927}
         alt="Banner"
+        priority
       />
     </div>
   );
