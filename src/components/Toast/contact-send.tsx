@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { FaTelegramPlane } from "react-icons/fa";
 
 type Props = {
-  isSuccess: boolean;
+  isSuccess: any | undefined;
 };
 
 export const ContactModalSend = (props: Props) => {
