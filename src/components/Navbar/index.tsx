@@ -3,7 +3,7 @@ import logo from "@/assets/logo.png";
 
 export const NavBar = () => {
   return (
-    <nav className="w-full h-[50px]  flex fixed z-20 bg-black">
+    <nav className="w-[100vw] h-[50px]  flex fixed z-20 bg-black">
       <div
         className="w-1/2 h-full text-center
         flex gap-3 items-center justify-center"

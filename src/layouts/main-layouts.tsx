@@ -37,7 +37,9 @@ export const MainLayouts = ({ children }: MainLayoutProps) => {
       ${Object.values(localFontLibrary)
         .map((font) => font.variable)
         .join(" ")}
-      overflow-x-hidden `}
+      w-[100vw]
+      overflow-x-hidden
+      `}
     >
       <NavBar />
       <video

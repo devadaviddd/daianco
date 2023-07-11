@@ -1,7 +1,6 @@
 import { Button, Label, Modal, TextInput, Textarea } from "flowbite-react";
 import { useForm, ValidationError } from "@formspree/react";
 import { ContactModalSend } from "../Toast/contact-send";
-import { useEffect } from "react";
 
 type Props = {
   // eslint-disable-next-line no-unused-vars
@@ -11,9 +10,6 @@ type Props = {
 export const ContactModal = (props: Props) => {
   const [state, handleSubmit] = useForm("mrgjjvyk");
   const { result } = state;
-  useEffect(() => {
-    console.log("result", result);
-  }, [result]);
 
   return (
     <>
