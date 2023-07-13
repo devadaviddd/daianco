@@ -15,7 +15,7 @@ const Home: NextPageWithLayout = () => {
     <>
       <Frame1 />
       <Frame2 />
-      <BannerHome/>
+      <BannerHome />
       <Frame3 />
       <Footer />
     </>

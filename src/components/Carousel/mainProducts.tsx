@@ -10,13 +10,19 @@ export const MainProductsCarousel = () => {
 
   const settingsSlide1 = {
     infinite: true,
-    speed: 500,
+    // speed: 500,
     slidesToShow: 1,
     dots: true,
     slidesToScroll: 1,
     vertical: true,
     verticalSwiping: true,
     swipeToSlide: true,
+    arrows: false,
+    initialSlide: 0,
+    centerMode: false,
+    // autoplay: true,
+    // autoplaySpeed: 2000,
+    // cssEase: "linear",
   };
 
   const settingsSlide2 = {
@@ -26,9 +32,14 @@ export const MainProductsCarousel = () => {
     slidesToScroll: 1,
     verticalSwiping: true,
     swipeToSlide: true,
+    arrows: false,
+    initialSlide: 0,
+    centerMode: false,
+
   };
 
   return (
+    
     <div className="w-1/2 h-full relative ">
       <Slider
         asNavFor={slide2}
@@ -59,13 +70,12 @@ export const MainProductsCarousel = () => {
         >
           <div>
             <Image
-              src='https://atctpwmqlndnpmrxwsds.supabase.co/storage/v1/object/public/productImage/3.png'
+              src="https://atctpwmqlndnpmrxwsds.supabase.co/storage/v1/object/public/productImage/3.png"
               alt="Fire Extinguisher White"
               width={1000}
               height={1000}
               className="w-[400px] h-[400px] rotate-[30deg]"
               priority
-
             />
           </div>
         </div>
@@ -81,7 +91,6 @@ export const MainProductsCarousel = () => {
               height={1000}
               className="w-[600px] h-[600px] rotate-[30deg]"
               priority
-
             />
           </div>
         </div>
@@ -90,7 +99,7 @@ export const MainProductsCarousel = () => {
       <Slider
         asNavFor={slide1}
         {...settingsSlide2}
-        className="w-[100vw] bottom-0 right-0 h-full flex flex-col !absolute
+        className="w-[100vw] bottom-0 right-0 h-[100vh]  !absolute
           -z-10"
         ref={(slider2) => setSlide2(slider2)}
       >
