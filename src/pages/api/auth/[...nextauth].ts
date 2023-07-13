@@ -14,6 +14,7 @@ const authOptions: NextAuthOptions = {
     CredentialsProvider({
       type: "credentials",
       credentials: {},
+      // eslint-disable-next-line no-unused-vars
       authorize(credential, req) {
         const { email, password } = credential as Credential;
         if (email !== "123@gmail.com" || password !== "123") {
