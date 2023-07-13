@@ -39,8 +39,7 @@ const Frame2 = () => {
             the same goal of safety. With our special knowledge and work
             experience of fire protection systems and security systems from the
             different manufacturers in the world, we do business for the safety
-            of life. 
-  
+            of life.
           </p>
         </div>
         <div

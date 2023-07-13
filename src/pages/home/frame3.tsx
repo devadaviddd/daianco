@@ -1,13 +1,6 @@
 import { ServiceCard, ServiceData } from "@/components/ServiceCard";
-import { useEffect } from "react";
 
 const Frame3 = () => {
-  useEffect(() => {
-    Object.values(ServiceData).map((service) => {
-      console.log(service.title);
-    });
-  }, []);
-
   return (
     <div
       className="w-full h-[100vh] flex flex-col 

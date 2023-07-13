@@ -10,7 +10,7 @@ export const MainProductsCarousel = () => {
 
   const settingsSlide1 = {
     infinite: true,
-    // speed: 500,
+    speed: 500,
     slidesToShow: 1,
     dots: true,
     slidesToScroll: 1,
@@ -20,9 +20,6 @@ export const MainProductsCarousel = () => {
     arrows: false,
     initialSlide: 0,
     centerMode: false,
-    // autoplay: true,
-    // autoplaySpeed: 2000,
-    // cssEase: "linear",
   };
 
   const settingsSlide2 = {
@@ -35,11 +32,9 @@ export const MainProductsCarousel = () => {
     arrows: false,
     initialSlide: 0,
     centerMode: false,
-
   };
 
   return (
-    
     <div className="w-1/2 h-full relative ">
       <Slider
         asNavFor={slide2}

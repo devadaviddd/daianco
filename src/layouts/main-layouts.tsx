@@ -44,13 +44,16 @@ export const MainLayouts = ({ children }: MainLayoutProps) => {
       <NavBar />
       <video
         autoPlay
+        key={'video'}
         loop
-        muted
+        muted 
         className="w-full h-full object-cover absolute -z-10  "
+        
       >
         <source
           src="https://static.vecteezy.com/system/resources/previews/007/525/563/mp4/loop-of-smoke-fire-sparks-rising-up-particle-free-video.mp4"
           type="video/mp4"
+          
         />
       </video>
       {children}

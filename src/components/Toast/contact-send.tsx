@@ -19,11 +19,6 @@ export const ContactModalSend = (props: Props) => {
     }
   }, [isSuccess]);
 
-  useEffect(() => {
-    console.log("show", show);
-  }, [show]);
-
-
   return (
     <>
       {show ? (
@@ -39,7 +34,7 @@ export const ContactModalSend = (props: Props) => {
             </div>
           </Toast>
         </div>
-      ): null}
+      ) : null}
     </>
   );
 };

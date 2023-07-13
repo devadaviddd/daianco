@@ -23,6 +23,7 @@
     "gsap": "^3.12.2",
     "keen-slider": "^6.8.5",
     "next": "13.4.7",
+    "next-auth": "^4.22.1",
     "next-transpile-modules": "^10.0.0",
     "postcss": "8.4.24",
     "react": "18.2.0",

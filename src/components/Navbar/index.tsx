@@ -1,7 +1,13 @@
 import Image from "next/image";
 import logo from "@/assets/logo.png";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const NavBar = () => {
+  const pathname = usePathname();
+
+  const isActiveLogin = pathname.startsWith("/auth/signin");
+
   return (
     <nav className="w-[100vw] h-[50px]  flex fixed z-20 bg-black">
       <div
@@ -32,9 +38,13 @@ export const NavBar = () => {
         <li className="text-white font-andantedisplay_bold text-md navChild">
           CONTACT
         </li>
-        <li className="text-white font-andantedisplay_bold text-md navChild">
-          LOGIN
-        </li>
+        <Link
+          href={isActiveLogin ? "" : "auth/signin"}
+        >
+          <li className="text-white font-andantedisplay_bold text-md navChild">
+            LOGIN
+          </li>
+        </Link>
       </ul>
     </nav>
   );

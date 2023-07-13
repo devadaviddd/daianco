@@ -38,20 +38,15 @@ export const HomeProductsCarousel = (props: Props) => {
   });
 
   useEffect(() => {
-    console.log(instanceRef.current?.slides.length);
     if (instanceRef.current && dotLength === 1) {
       const slideLength = instanceRef.current.slides.length;
       setDotLength(dotLength + (slideLength % perView));
     }
   }, [instanceRef.current]);
 
-  useEffect(() => {
-    console.log("currentSlide", currentSlide);
-  }, [currentSlide]);
+  useEffect(() => {}, [currentSlide]);
 
-  useEffect(() => {
-    console.log("dotlength", dotLength);
-  }, [dotLength]);
+  useEffect(() => {}, [dotLength]);
 
   return (
     <>
