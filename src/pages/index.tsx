@@ -12,7 +12,7 @@ import { BannerHome } from "@/components/Banner";
 import { getSession, useSession } from "next-auth/react";
 
 const Home: NextPageWithLayout = () => {
-  const { status, data } = useSession();
+  const { status } = useSession();
 
   useEffect(() => {
     async function getUserSession() {

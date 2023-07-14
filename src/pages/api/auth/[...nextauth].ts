@@ -1,4 +1,4 @@
-import NextAuth, { NextAuthOptions } from "next-auth";
+import NextAuth, { NextAuthOptions, User } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 type Credential = {
@@ -17,7 +17,7 @@ const authOptions: NextAuthOptions = {
       type: "credentials",
       credentials: {},
       // eslint-disable-next-line no-unused-vars
-      authorize(credential, req) {
+      authorize (credential, req) {
         const { email, password } = credential as Credential;
         if (email !== "123@gmail.com" || password !== "123") {
           throw new Error("invalid credentials");
@@ -29,7 +29,7 @@ const authOptions: NextAuthOptions = {
           name: "John Doe",
           email: "john@gmail.com",
           role: "admin",
-        };
+        } as User;
       },
     }),
   ],
