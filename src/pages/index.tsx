@@ -9,15 +9,21 @@ import Frame2 from "./home/frame2";
 import Frame3 from "./home/frame3";
 import { Footer } from "@/components/Footer";
 import { BannerHome } from "@/components/Banner";
-import { useSession } from "next-auth/react";
+import { getSession, useSession } from "next-auth/react";
 
 const Home: NextPageWithLayout = () => {
   const { status, data } = useSession();
-  
 
   useEffect(() => {
+    async function getUserSession() {
+      const session = await getSession();
+      const { user } = session!;
+
+      console.log(user.role);
+    }
+
     if (status === "authenticated") {
-      console.log(data);
+      getUserSession();
     }
   }, [status]);
 

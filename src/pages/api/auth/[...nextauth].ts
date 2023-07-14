@@ -7,6 +7,8 @@ type Credential = {
 };
 
 const authOptions: NextAuthOptions = {
+  secret: process.env.NEXTAUTH_SECRET,
+  
   session: {
     strategy: "jwt",
   },
@@ -33,15 +35,22 @@ const authOptions: NextAuthOptions = {
   ],
   pages: {
     signIn: "/auth/signin",
+    signOut: '/',
   },
   callbacks: {
     jwt(params) {
-      // update token
-      // if (params.user?.role) {
-      //   params.token.role = params.user.role;
-      // }
-      // return final_token
+      if (params.user?.role) {
+        params.token.role = params.user.role;
+        console.log("params", params);
+      }
       return params.token;
+    },
+    session({ session, token }) {
+      const { user } = session;
+      if (token) {
+        user.role = token.role as string;
+      }
+      return session;
     },
   },
 };

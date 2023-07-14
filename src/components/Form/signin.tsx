@@ -2,7 +2,7 @@ import { Button, Checkbox, Label, TextInput } from "flowbite-react";
 import { FormEventHandler, useState } from "react";
 import { signIn } from "next-auth/react";
 
-export  const SignInForm = () => {
+export const SignInForm = () => {
   const [userInfo, setUserInfo] = useState({ email: "", password: "" });
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     // validate your userinfo
@@ -56,4 +56,4 @@ export  const SignInForm = () => {
       <Button type="submit">Submit</Button>
     </form>
   );
-}
+};

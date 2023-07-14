@@ -23,7 +23,7 @@ const Frame1 = () => {
             DaiAn
           </h1>
           <span className="text-3xl text-white font-andanted text_light">
-            DAIAN SAFETY TECHNOLOGY
+          DAIAN SAFETY TECHNOLOGY
           </span>
         </div>
       </div>
