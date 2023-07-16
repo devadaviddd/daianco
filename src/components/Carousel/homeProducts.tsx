@@ -1,4 +1,4 @@
-import { Product } from "@/pages/api/getProductsHomePage";
+import { Product } from "@/pages/api/get-products-homepage";
 import { useKeenSlider } from "keen-slider/react";
 import { HomeProductCard } from "../ProductCard/homeCard";
 import { useEffect, useState } from "react";

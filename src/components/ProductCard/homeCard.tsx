@@ -1,5 +1,5 @@
 import cardBg from "@/assets/productCard-BG.png";
-import { Product } from "@/pages/api/getProductsHomePage";
+import { Product } from "@/pages/api/get-products-homepage";
 import Image from "next/image";
 
 type Props = {

@@ -5,6 +5,9 @@ import { ReactElement, ReactNode, useEffect, useState } from "react";
 import { SessionProvider } from "next-auth/react";
 import { useRouter } from "next/router";
 import { Loading } from "@/components/Loading";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   // eslint-disable-next-line no-unused-vars
@@ -45,9 +48,11 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   return getLayout(
     <>
-      <SessionProvider session={pageProps.session}>
-        {loading ? <Loading /> : <Component {...pageProps} />}
-      </SessionProvider>
+      <QueryClientProvider client={queryClient}>
+        <SessionProvider session={pageProps.session}>
+          {loading ? <Loading /> : <Component {...pageProps} />}
+        </SessionProvider>
+      </QueryClientProvider>
     </>
   );
 }

@@ -1,20 +1,38 @@
 import { Button, Checkbox, Label, TextInput } from "flowbite-react";
 import { FormEventHandler, useState } from "react";
 import { signIn } from "next-auth/react";
+import { User } from "@/types/types";
 
 export const SignInForm = () => {
   const [userInfo, setUserInfo] = useState({ email: "", password: "" });
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     // validate your userinfo
     e.preventDefault();
-    console.log(userInfo);
-    const res = await signIn("credentials", {
-      email: userInfo.email,
-      password: userInfo.password,
-      redirect: false,
+    const { email: inputEmail, password: inputPassword } = userInfo;
+
+    const getCredentialAPI = await fetch("/api/get-credential", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ inputEmail, inputPassword }),
     });
 
-    console.log(res);
+    const user: User = await getCredentialAPI.json();
+
+    if (user) {
+      console.log(user);
+      const { email, id, role } = user;
+      await signIn("credentials", {
+        email,
+        id,
+        role,
+        redirect: false,
+      });
+    } else {
+      console.log("Wrong Credential");
+    }
   };
 
   return (

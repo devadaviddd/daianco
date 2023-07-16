@@ -3,13 +3,12 @@ import { NextRequest, NextResponse } from "next/server";
 
 export default withAuth(
   function middleware(req: NextRequest) {
-    // return NextResponse
     return NextResponse.rewrite(new URL("/admin", req.url));
   },
   {
     callbacks: {
       authorized({ token }) {
-        return token?.role === "admin";
+        return token?.role === "Admin";
       },
     },
   }

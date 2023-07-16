@@ -3,12 +3,14 @@ import CredentialsProvider from "next-auth/providers/credentials";
 
 type Credential = {
   email: string;
-  password: string;
+  id: string;
+  role: string;
+  name: string;
 };
 
 const authOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
-  
+
   session: {
     strategy: "jwt",
   },
@@ -16,32 +18,27 @@ const authOptions: NextAuthOptions = {
     CredentialsProvider({
       type: "credentials",
       credentials: {},
-      // eslint-disable-next-line no-unused-vars
-      authorize (credential, req) {
-        const { email, password } = credential as Credential;
-        if (email !== "123@gmail.com" || password !== "123") {
-          throw new Error("invalid credentials");
-        }
-
-        // if everything is fine
+      authorize: (credential, req) => {
+        const { email, id, role, name } = req.body as Credential;
+        console.log("credential", credential);
         return {
-          id: "1234",
-          name: "John Doe",
-          email: "john@gmail.com",
-          role: "admin",
+          email,
+          role,
+          id,
+          name,
         } as User;
       },
     }),
   ],
   pages: {
     signIn: "/auth/signin",
-    signOut: '/',
+    signOut: "/",
   },
   callbacks: {
     jwt(params) {
+      console.log("params", params);
       if (params.user?.role) {
         params.token.role = params.user.role;
-        console.log("params", params);
       }
       return params.token;
     },

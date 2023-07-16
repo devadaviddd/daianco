@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Product } from "../api/getProductsHomePage";
+import { Product } from "../api/get-products-homepage";
 import { HomeProductsCarousel } from "@/components/Carousel/homeProducts";
 
 const Frame2 = () => {
@@ -8,7 +8,7 @@ const Frame2 = () => {
 
   useEffect(() => {
     async function getProducts() {
-      const res = await fetch("/api/getProductsHomePage");
+      const res = await fetch("/api/get-products-homepage");
       const product: Product[] = await res.json();
       setProducts(product);
       setLoading(false);
