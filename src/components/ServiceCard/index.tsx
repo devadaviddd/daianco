@@ -7,6 +7,7 @@ import maintenanceImg from "@/assets/maintenance.png";
 import { ContactModal } from "../Modal/contact";
 import { useState } from "react";
 import { Modal } from "flowbite-react";
+import { StaticImageData } from "next/image";
 
 enum ServiceType {
   CONSULTANT = 0,
@@ -18,7 +19,7 @@ enum ServiceType {
 type Props = {
   title: string;
   description: string;
-  img: string;
+  img: StaticImageData;
 };
 
 export const ServiceData = {
@@ -26,25 +27,25 @@ export const ServiceData = {
     title: "Consultant",
     description:
       "Support: design, set up a design document, approval, set up a completed work document, prepare the document for fire protection certificate for a construction project.",
-    img: consultantImg.src,
+    img: consultantImg,
   },
   [ServiceType.INSTALLATION]: {
     title: "Installation",
     description:
       "Install, check and take over the different types of security and fire protection systems in the areas of Viet Nam.",
-    img: installationImg.src,
+    img: installationImg,
   },
   [ServiceType.SUPPLY]: {
     title: "Supply",
     description:
       "Supply the different types of security and fire protection systems in the areas of Viet Nam.",
-    img: supplyImg.src,
+    img: supplyImg,
   },
   [ServiceType.MAINTENANCE]: {
     title: "Maintenance",
     description:
       "Maintain the different types of security and fire protection systems in the areas of Viet Nam.",
-    img: maintenanceImg.src,
+    img: maintenanceImg,
   },
 };
 
@@ -72,7 +73,7 @@ export const ServiceCard = (props: Props) => {
         rounded-tr-2xl rounded-br-2xl
         bg-no-repeat bg-center bg-cover"
           style={{
-            backgroundImage: `url(${img})`,
+            backgroundImage: `url(${img.src})`,
           }}
         ></div>
 
